@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Open Sans", Arial, sans-serif;
+  --color-brand: #ff8e25;
+  --color-ink: #1d2127;
+  --color-footer: #464646;
+  --color-copy: #3e3c3c;
+  --color-faint: #a8a8a8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  color: #000;
+  background: #fff;
+  font-size: 13px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.container-site {
+  width: min(1170px, calc(100% - 30px));
+  margin-inline: auto;
+}
+
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 1;
+}
+
+.nav-pill[aria-current="page"],
+.nav-pill.active {
+  background: #ff8e25;
+}
+
+.spec-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.spec-table th,
+.spec-table td {
+  border: 1px solid #e4e4e4;
+  padding: 10px 14px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.spec-table tbody tr:nth-child(odd) {
+  background: #f7f7f7;
+}
+
+.spec-table tbody tr:nth-child(even) {
+  background: #fff;
+}
