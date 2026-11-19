@@ -4,7 +4,7 @@ import { CategoryPage } from './pages/CategoryPage'
 import { ContactPage } from './pages/ContactPage'
 import { CatalogPage, DownloadsPage, SoftwarePage } from './pages/DownloadsPage'
 import { HomePage } from './pages/HomePage'
-import { AboutPage, GlobalNetworkPage, LoginPage, MilestonesPage, NewsArticlePage, NewsPage, SearchPage } from './pages/InfoPages'
+import { AboutPage, GlobalNetworkPage, MilestonesPage, NewsArticlePage, NewsPage, SearchPage } from './pages/InfoPages'
 import { ProductPage } from './pages/ProductPage'
 import { SeriesPage } from './pages/SeriesPage'
 import { CookiesPage, CsrPage, EwastePage, FaqPage, NotFoundPage, PrivacyPage, SitemapPage, TermsPage, WarrantyPage } from './pages/StaticPages'
@@ -29,8 +29,6 @@ export default function App() {
         <Route path="news" element={<NewsPage />} />
         <Route path="news/:slug" element={<NewsArticlePage />} />
         <Route path="search" element={<SearchPage />} />
-        <Route path="login" element={<LoginPage mode="login" />} />
-        <Route path="register" element={<LoginPage mode="register" />} />
         <Route path="privacy-policy" element={<PrivacyPage />} />
         <Route path="cookies-policy" element={<CookiesPage />} />
         <Route path="terms" element={<TermsPage />} />

@@ -210,6 +210,16 @@ export const worldOffices: Office[] = [
   },
 ]
 
+export const contactEmail = 'rfq@selecelectronic.com'
+
+export const footerPhones = ['+91 80 4718 2264', '+91 80 4718 9035']
+
+export const contactPhones = ['+91 98451 33072', '+91 98451 77419']
+
+export const footerAddress = 'Plot 42, KIADB Industrial Area, Bommasandra, Bengaluru 560099, Karnataka'
+
+export const contactAddress = '3rd Floor, Sigma Tech Park, Whitefield Main Road, Bengaluru 560066, Karnataka'
+
 export const enquiryTypes = [
   'Product Enquiry',
   'Technical Support',
@@ -223,7 +233,7 @@ export const aboutFacilities = [
   {
     title: 'Head Office',
     image: 'https://www.selec.com/apps/web-in/media/images/company_building.jpg',
-    text: 'EL-27/1, Electronic Zone, TTC Industrial Area, MIDC, Mahape, Navi Mumbai - 400 710, Maharashtra.',
+    text: footerAddress,
   },
   {
     title: 'Design Facilities',

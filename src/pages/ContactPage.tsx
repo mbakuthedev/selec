@@ -2,7 +2,7 @@ import { useMemo, useState, type ReactNode } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { usePageTitle } from '../components/Layout'
 import { PageBanner } from '../components/PageBanner'
-import { enquiryTypes, indiaOffices, worldOffices, type Office } from '../data/content'
+import { contactAddress, contactEmail, contactPhones, enquiryTypes } from '../data/content'
 
 type Errors = Record<string, string>
 
@@ -10,7 +10,6 @@ export function ContactPage() {
   usePageTitle('Selec Controls - Contact Us')
   const [params] = useSearchParams()
   const product = params.get('product') || ''
-  const [region, setRegion] = useState<'India' | 'International'>('India')
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState<Errors>({})
   const [form, setForm] = useState({
@@ -24,8 +23,6 @@ export function ContactPage() {
     subject: product ? `Enquiry for ${product}` : '',
     message: product ? `Please share details for ${product}.` : '',
   })
-
-  const offices: Office[] = region === 'India' ? indiaOffices : worldOffices
 
   const validate = useMemo(() => {
     return () => {
@@ -112,31 +109,19 @@ export function ContactPage() {
             </p>
           )}
         </form>
-        <div>
-          <div className="mb-4 flex gap-2">
-            {(['India', 'International'] as const).map((item) => (
-              <button
-                key={item}
-                type="button"
-                className={`px-4 py-2 text-[13px] font-bold ${region === item ? 'bg-brand text-white' : 'bg-[#f3f3f3]'}`}
-                onClick={() => setRegion(item)}
-              >
-                {item}
-              </button>
+        <div className="border border-[#eee] p-5">
+          <h2 className="mb-3 text-[18px] font-semibold text-ink">Contact</h2>
+          <p className="text-[14px] leading-6 text-[#444]">{contactAddress}</p>
+          <div className="mt-4 space-y-1 text-[14px] text-[#333]">
+            {contactPhones.map((phone) => (
+              <p key={phone}>{phone}</p>
             ))}
           </div>
-          <div className="space-y-4">
-            {offices.map((office) => (
-              <article key={office.title} className="border border-[#eee] p-4">
-                <h3 className="mb-2 text-[15px] font-bold text-ink">{office.title}</h3>
-                {office.lines.map((line) => (
-                  <p key={line} className="text-[13px] leading-6 text-[#444]">
-                    {line}
-                  </p>
-                ))}
-              </article>
-            ))}
-          </div>
+          <p className="mt-4 text-[14px]">
+            <a className="text-brand" href={`mailto:${contactEmail}`}>
+              {contactEmail}
+            </a>
+          </p>
         </div>
       </div>
       <style>{`

@@ -123,7 +123,7 @@ export function EwastePage() {
         Selec, as an electronics manufacturer, publishes e-waste guidance for customers in India. For collection or disposal questions, use the Mahape head office contact on the Contact page. Do not treat this summary as the statutory notice.
       </p>
       <p className="mt-4">
-        Head office: EL-27/1, Electronic Zone, TTC Industrial Area, MIDC, Mahape, Navi Mumbai - 400 710, Maharashtra. Phone +91-9322240188 / +91-9136977315.
+        Contact the office listed on the Contact page for collection or disposal questions.
       </p>
     </Simple>
   )
@@ -138,7 +138,6 @@ export function SitemapPage() {
     { label: 'Contact Us', to: '/contact' },
     { label: 'News', to: '/news' },
     { label: 'Search', to: '/search' },
-    { label: 'Login', to: '/login' },
     { label: 'Privacy Policy', to: '/privacy-policy' },
     { label: 'FAQs', to: '/faq' },
     { label: 'Warranty Terms', to: '/warranty' },

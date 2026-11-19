@@ -1,6 +1,7 @@
 import { ChevronDown, Menu, Search, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
+import { footerPhones } from '../data/content'
 import {
   INDIA_FLAG,
   LOGO,
@@ -96,12 +97,6 @@ export function Header() {
                 <button type="button" className="inline-flex items-center" aria-label="Search" onClick={() => setSearchOpen(true)}>
                   <Search size={15} />
                 </button>
-                <Link to="/login" className="hover:text-brand">
-                  Login
-                </Link>
-                <Link to="/register" className="hover:text-brand">
-                  Register
-                </Link>
                 <div
                   className="relative"
                   onMouseEnter={() => setRegionOpen(true)}
@@ -244,14 +239,7 @@ export function Header() {
                 ))}
               </ul>
               <p className="mt-6 text-[12.5px] text-[#666]">
-                Customer service{' '}
-                <a className="text-brand" href="tel:+919322240188">
-                  +91-9322240188
-                </a>
-                {' / '}
-                <a className="text-brand" href="tel:+919136977315">
-                  +91-9136977315
-                </a>
+                Customer service {footerPhones.join(' / ')}
               </p>
             </div>
           </div>
@@ -260,14 +248,6 @@ export function Header() {
 
       {mobileOpen && (
         <div className={`fixed inset-x-0 bottom-0 z-40 overflow-y-auto bg-white lg:hidden ${compact ? 'top-[72px]' : 'top-[96px]'}`}>
-          <div className="flex items-center justify-end gap-4 border-b border-[#eee] px-4 py-3 text-[13px]">
-            <Link to="/login" onClick={() => setMobileOpen(false)}>
-              Login
-            </Link>
-            <Link to="/register" onClick={() => setMobileOpen(false)}>
-              Register
-            </Link>
-          </div>
           <nav className="px-2 py-2">
             <Link to="/" className="block border-b border-[#f2f2f2] px-3 py-3 text-[14px] font-bold uppercase" onClick={() => setMobileOpen(false)}>
               Home

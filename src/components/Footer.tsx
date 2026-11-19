@@ -1,6 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { contactEmail, footerAddress, footerPhones } from '../data/content'
 import { socialLinks } from '../data/navigation'
 
 const about = [
@@ -39,23 +40,21 @@ export function Footer() {
             <span>
               Customer service center
               <br />
-              <a className="hover:text-white" href="tel:+919322240188">
-                +91-9322240188
-              </a>
-              <br />
-              <a className="hover:text-white" href="tel:+919136977315">
-                +91-9136977315
-              </a>
+              {footerPhones.map((phone) => (
+                <span key={phone} className="block">
+                  {phone}
+                </span>
+              ))}
             </span>
           </p>
           <p className="mb-2 flex items-start gap-2 text-[12.5px]">
             <MapPin size={14} className="mt-0.5 shrink-0 text-brand" />
-            <span>EL-27/1, Electronic Zone, TTC Industrial Area, MIDC, Mahape, Navi Mumbai - 400 710, Maharashtra.</span>
+            <span>{footerAddress}</span>
           </p>
           <p className="flex items-start gap-2 text-[12.5px]">
             <Mail size={14} className="mt-0.5 shrink-0 text-brand" />
-            <a className="hover:text-white" href="mailto:salestech@selec.com">
-              Email: salestech@selec.com
+            <a className="hover:text-white" href={`mailto:${contactEmail}`}>
+              Email: {contactEmail}
             </a>
           </p>
         </div>
