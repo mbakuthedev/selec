@@ -6,7 +6,6 @@ import { socialLinks } from '../data/navigation'
 
 const about = [
   { label: 'About Us', to: '/about' },
-  { label: 'Global Network', to: '/about/global-network' },
   { label: 'Privacy Policy', to: '/privacy-policy' },
   { label: 'Cookies Policy', to: '/cookies-policy' },
   { label: 'Terms and Conditions', to: '/terms' },
@@ -97,9 +96,7 @@ export function Footer() {
                 return
               }
               setError('')
-              setMessage('You are subscribed. This preview stores the request only in your browser.')
-              const existing = JSON.parse(localStorage.getItem('selec-newsletter') || '[]') as string[]
-              localStorage.setItem('selec-newsletter', JSON.stringify([...existing, email]))
+              setMessage('Thank you for subscribing.')
               setEmail('')
             }}
           >

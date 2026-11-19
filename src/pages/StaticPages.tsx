@@ -35,7 +35,7 @@ export function CookiesPage() {
   return (
     <Simple title="Cookies Policy">
       <p>
-        The public Selec site uses cookies for consent, analytics, and site preferences. This recreation does not set tracking cookies. It uses localStorage only when you subscribe, send an enquiry, or use the local login form.
+        The public Selec site uses cookies for consent, analytics, and site preferences. This recreation does not set tracking cookies. It uses session storage only for the local login form.
       </p>
       <p className="mt-4">
         Official notice:{' '}
@@ -136,7 +136,6 @@ export function SitemapPage() {
     ...aboutLinks,
     ...downloadLinks,
     { label: 'Contact Us', to: '/contact' },
-    { label: 'News', to: '/news' },
     { label: 'Search', to: '/search' },
     { label: 'Privacy Policy', to: '/privacy-policy' },
     { label: 'FAQs', to: '/faq' },

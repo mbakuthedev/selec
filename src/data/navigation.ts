@@ -87,25 +87,15 @@ export const topCategories: NavLink[] = [
 export const aboutLinks: NavLink[] = [
   { label: 'Overview', to: '/about' },
   { label: 'Milestones', to: '/about/milestones' },
-  { label: 'Global Network', to: '/about/global-network' },
 ]
 
 export const downloadLinks: NavLink[] = [
   { label: 'Download Center', to: '/datasheet' },
   { label: 'Catalog & Brochures', to: '/catalog' },
-  { label: 'Software', to: '/software' },
-]
-
-export const regions = [
-  { label: 'Selec Global', href: 'https://www.selec.com', flag: 'https://www.selec.com/apps/web-in/media/images/flags/global.png' },
-  { label: 'Selec USA', href: 'https://www.selec.com/us//home', flag: 'https://www.selec.com/apps/web-in/media/images/flags/us.svg.png' },
-  { label: 'Selec Germany', href: 'https://selec-europe.com', flag: 'https://www.selec.com/apps/web-in/media/images/flags/de.svg.png' },
-  { label: 'Selec Australia', href: 'https://www.selec.com/au//home', flag: 'https://www.selec.com/apps/web-in/media/images/flags/au.svg.png' },
 ]
 
 export const LOGO = 'https://www.selec.com/apps/web-in/media/logos/seleclogo.png'
 export const MENU_IMAGE = 'https://www.selec.com/apps/web-in/media/images/product%20menu%20img_cat%20frnt.jpg'
-export const INDIA_FLAG = 'https://www.selec.com/apps/web-in/media/images/flags/in.svg.png'
 
 export const socialLinks = [
   { label: 'Facebook', href: 'https://www.facebook.com/seleccontrol/' },

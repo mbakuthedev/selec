@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Link, useParams, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import { usePageTitle } from '../components/Layout'
 import { PageBanner } from '../components/PageBanner'
-import { aboutFacilities, certifications, corporateMilestones, newsArticles, productMilestones, regionsNetwork } from '../data/content'
+import { aboutFacilities, certifications, corporateMilestones, productMilestones } from '../data/content'
 import { catalog } from '../lib/catalog'
 
 export function AboutPage() {
@@ -77,85 +77,6 @@ function Timeline({ title, items }: { title: string; items: readonly (readonly [
         ))}
       </ol>
     </section>
-  )
-}
-
-export function GlobalNetworkPage() {
-  usePageTitle('Selec Controls - Global Network')
-  return (
-    <div>
-      <PageBanner
-        title="Global Network"
-        crumbs={[{ label: 'Home', to: '/' }, { label: 'About', to: '/about' }, { label: 'Global Network' }]}
-      />
-      <div className="container-site py-10">
-        <p className="mb-8 text-[16px] text-ink">
-          In over 75 countries and growing. Our Offices — Selec India | Selec USA | Selec GmbH | Selec Australia
-        </p>
-        <div className="grid gap-6 md:grid-cols-2">
-          {regionsNetwork.map((region) => (
-            <article key={region.name} className="border border-[#eee] p-4">
-              <img src={region.image} alt="" className="mb-3 h-16 w-auto object-contain" />
-              <h2 className="text-[18px] font-bold text-ink uppercase">{region.name}</h2>
-              <p className="mt-2 text-[14px] leading-6 text-[#444]">{region.places}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
-}
-
-export function NewsPage() {
-  usePageTitle('News | Selec')
-  return (
-    <div>
-      <PageBanner title="News" crumbs={[{ label: 'Home', to: '/' }, { label: 'News' }]} />
-      <div className="container-site grid gap-6 py-10 md:grid-cols-3">
-        {newsArticles.map((article) => (
-          <Link key={article.slug} to={`/news/${article.slug}`} className="border border-[#eee]">
-            <img src={article.image} alt="" className="aspect-[7/5] w-full object-cover" />
-            <div className="p-4">
-              <h2 className="text-[16px] font-semibold">{article.title}</h2>
-              <p className="mt-2 text-[12.5px] text-[#777]">{article.date}</p>
-            </div>
-          </Link>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-export function NewsArticlePage() {
-  const { slug } = useParams()
-  const article = newsArticles.find((item) => item.slug === slug)
-  usePageTitle(article ? `${article.title} | Selec` : 'News | Selec')
-  if (!article) {
-    return (
-      <div>
-        <PageBanner title="News" crumbs={[{ label: 'Home', to: '/' }, { label: 'News', to: '/news' }]} />
-        <p className="container-site py-12">Article not found.</p>
-      </div>
-    )
-  }
-  return (
-    <div>
-      <PageBanner title="News" crumbs={[{ label: 'Home', to: '/' }, { label: 'News', to: '/news' }, { label: article.title }]} />
-      <article className="container-site max-w-3xl py-10">
-        <p className="text-[13px] text-[#777]">{article.date}</p>
-        <h2 className="mt-2 text-[28px] leading-snug font-semibold text-ink">{article.title}</h2>
-        <img src={article.image} alt="" className="my-6 w-full object-cover" />
-        <p className="text-[15px] leading-7 text-[#333]">{article.summary}</p>
-        {article.source && (
-          <p className="mt-6 text-[14px]">
-            Source article:{' '}
-            <a className="text-brand hover:underline" href={article.source} target="_blank" rel="noreferrer">
-              {article.source}
-            </a>
-          </p>
-        )}
-      </article>
-    </div>
   )
 }
 

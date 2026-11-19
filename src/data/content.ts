@@ -25,39 +25,6 @@ export const expertise = [
   },
 ]
 
-export const newsArticles = [
-  {
-    slug: 'simplify-plc-programming',
-    title: 'Simplify PLC Programming and Reduce Onsite Maintenance Time.',
-    date: '31 October 2026',
-    image:
-      'https://www.selec.com/apps/web-in/usermedia/formsStorage/bca46a78e0b059b2be8a32c67e260c68/photos/2026-11-02-14-50-35/725e2c6c8dac6de66e78c9cc67ff2770_Website_News_-__Mibrx_PD_1_1.jpg',
-    source: 'https://www.linkedin.com/pulse/simplify-plc-programming-reduce-onsite-maintenance-kq3bf/',
-    summary:
-      'Selec outlines how the MiBRX modular PLC approach shortens programming work and cuts the time spent on onsite maintenance.',
-  },
-  {
-    slug: 'precision-temperature-controllers',
-    title: 'Why Modern Manufacturing Demands Precision Temperature Controllers',
-    date: '28 September 2026',
-    image:
-      'https://www.selec.com/apps/web-in/usermedia/formsStorage/bca46a78e0b059b2be8a32c67e260c68/photos/2026-09-28-19-37-15/1c25dea0807c92a750fdcc94e375698f_Website_News_-_TC_1.jpg',
-    source: 'https://www.linkedin.com/pulse/why-modern-manufacturing-demands-precision-temperature-92ojf/',
-    summary:
-      'A look at why tighter temperature control has become a production requirement across modern manufacturing lines, and where Selec controller families fit.',
-  },
-  {
-    slug: 'new-sunshine-enterprises-indian-railways',
-    title: 'Authorized Selec dealer for Indian Railways: New Sunshine Enterprises',
-    date: '02 June 2026',
-    image:
-      'https://www.selec.com/apps/web-in/usermedia/formsStorage/bca46a78e0b059b2be8a32c67e260c68/photos/2026-08-05-11-12-23/b0db57e2b5af13e627469bd294b8763a_Indian_Railways_-_New_Sunshine_Enterprises_1.jpg',
-    source: '',
-    summary:
-      'Selec named New Sunshine Enterprises as an authorized dealer supporting Indian Railways requirements.',
-  },
-]
-
 export const corporateMilestones = [
   ['2022', 'Solar EPC division started'],
   ['2021', 'Upgraded to ISO:9001:2015, Started new verticals - PQ & Renewables'],
@@ -91,37 +58,6 @@ export const productMilestones = [
   ['2009', 'Electrical Panel Meters, PLC with HMI'],
   ['2002', 'Temperature Controllers : Digital and PID series'],
 ] as const
-
-export const regionsNetwork = [
-  {
-    name: 'Asia',
-    image: 'https://www.selec.com/apps/web-in/media/images/asia.png',
-    places:
-      'India, Iraq, Uzbekistan, Turkey, Bahrain, Qatar, Muscat, Oman, Kuwait, UAE, Israel, Bhutan, Nepal, Bangladesh, Myanmar, Thailand, Singapore, Malaysia, Maldives, Philippines, Vietnam, Taiwan, China, Cambodia, Indonesia, Sri Lanka, Lebanon, Jordan, Saudi Arabia, Palestine',
-  },
-  {
-    name: 'Europe',
-    image: 'https://www.selec.com/apps/web-in/media/images/europe.jpg',
-    places:
-      'Germany, Czech Republic, Netherlands, Belgium, Sweden, Spain, France, Ireland, Denmark, Austria, Poland, Slovakia, Slovenia, Luxembourg, Hungary, Lithuania, Italy, Norway, United Kingdom, Switzerland',
-  },
-  {
-    name: 'Oceania',
-    image: 'https://www.selec.com/apps/web-in/media/images/australia_icon.png',
-    places: 'Australia — Selec Controls Australia Pty Ltd, Sydney',
-  },
-  {
-    name: 'Africa',
-    image: 'https://www.selec.com/apps/web-in/media/images/africa.jpg',
-    places: 'Egypt, Morocco, Kenya, Ethiopia, Rwanda, Uganda, South Africa, Nigeria, Tanzania, Tunisia',
-  },
-  {
-    name: 'America',
-    image: 'https://www.selec.com/apps/web-in/media/images/america.jpg',
-    places:
-      'USA, Mexico, Canada, Argentina, Uruguay, Bolivia, Brazil, Chile, Colombia, Ecuador, Guyana, Paraguay, Peru, Suriname, Venezuela',
-  },
-]
 
 export type Office = {
   title: string

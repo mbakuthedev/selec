@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { SectionHeading } from '../components/PageBanner'
 import { ProductCard } from '../components/ProductCard'
-import { expertise, newsArticles, slides } from '../data/content'
+import { expertise, slides } from '../data/content'
 import { featuredSlugs, newSlugs } from '../data/highlights'
 import { usePageTitle } from '../components/Layout'
 import { catalog, getProduct } from '../lib/catalog'
@@ -12,7 +12,6 @@ const jumps = [
   { label: 'Our Solution Expertise', href: '#ourExpertise' },
   { label: 'Featured Products', href: '#featuredProducts' },
   { label: 'New Products', href: '#newProducts' },
-  { label: 'News', href: '#news' },
 ]
 
 function pick(slugs: string[]) {
@@ -93,22 +92,6 @@ export function HomePage() {
       />
       <ProductStrip id="newProducts" lead="New" emphasis="Products" products={newest} index={newIndex} onIndex={setNewIndex} showNew />
 
-      <section id="news" className="scroll-mt-24 py-12">
-        <div className="container-site">
-          <SectionHeading lead="" emphasis="News" />
-          <div className="grid gap-6 md:grid-cols-3">
-            {newsArticles.map((article) => (
-              <Link key={article.slug} to={`/news/${article.slug}`} className="border border-[#eee] bg-white">
-                <img src={article.image} alt="" className="aspect-[1050/750] w-full object-cover" />
-                <div className="p-4">
-                  <h3 className="text-[15px] leading-snug font-semibold text-ink">{article.title}</h3>
-                  <p className="mt-2 text-[12.5px] text-[#777]">{article.date}</p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
       {catalog.products.length < 20 && (
         <p className="container-site pb-8 text-center text-[12px] text-[#888]">Product index is refreshing from the public catalog.</p>
       )}

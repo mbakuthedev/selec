@@ -2,9 +2,9 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import { CategoryPage } from './pages/CategoryPage'
 import { ContactPage } from './pages/ContactPage'
-import { CatalogPage, DownloadsPage, SoftwarePage } from './pages/DownloadsPage'
+import { CatalogPage, DownloadsPage } from './pages/DownloadsPage'
 import { HomePage } from './pages/HomePage'
-import { AboutPage, GlobalNetworkPage, MilestonesPage, NewsArticlePage, NewsPage, SearchPage } from './pages/InfoPages'
+import { AboutPage, MilestonesPage, SearchPage } from './pages/InfoPages'
 import { ProductPage } from './pages/ProductPage'
 import { SeriesPage } from './pages/SeriesPage'
 import { CookiesPage, CsrPage, EwastePage, FaqPage, NotFoundPage, PrivacyPage, SitemapPage, TermsPage, WarrantyPage } from './pages/StaticPages'
@@ -20,14 +20,10 @@ export default function App() {
         <Route path="product-details/:slug" element={<ProductPage />} />
         <Route path="about" element={<AboutPage />} />
         <Route path="about/milestones" element={<MilestonesPage />} />
-        <Route path="about/global-network" element={<GlobalNetworkPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="datasheet" element={<DownloadsPage />} />
         <Route path="catalog" element={<CatalogPage />} />
         <Route path="brochure" element={<Navigate to="/catalog" replace />} />
-        <Route path="software" element={<SoftwarePage />} />
-        <Route path="news" element={<NewsPage />} />
-        <Route path="news/:slug" element={<NewsArticlePage />} />
         <Route path="search" element={<SearchPage />} />
         <Route path="privacy-policy" element={<PrivacyPage />} />
         <Route path="cookies-policy" element={<CookiesPage />} />

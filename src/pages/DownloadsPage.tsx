@@ -141,31 +141,3 @@ export function CatalogPage() {
     </div>
   )
 }
-
-export function SoftwarePage() {
-  usePageTitle('Software | Selec')
-  return (
-    <div>
-      <PageBanner title="Software" crumbs={[{ label: 'Home', to: '/' }, { label: 'Software' }]} />
-      <div className="container-site py-10">
-        <p className="mb-6 max-w-3xl text-[14px] leading-6 text-[#444]">
-          Programming and support software listed on the public Selec software page.
-        </p>
-        {catalog.software.length === 0 ? (
-          <p className="text-[14px]">Software links were not available in the latest index.</p>
-        ) : (
-          <ul className="divide-y divide-[#eee] border border-[#eee]">
-            {catalog.software.map((item) => (
-              <li key={item.href + item.title} className="flex items-center justify-between gap-4 px-4 py-3">
-                <span className="text-[14px]">{item.title}</span>
-                <a href={item.href} className="shrink-0 bg-brand px-3 py-1.5 text-[12px] font-bold text-white" target="_blank" rel="noreferrer">
-                  Open
-                </a>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-    </div>
-  )
-}

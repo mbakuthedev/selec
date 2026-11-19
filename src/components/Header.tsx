@@ -2,16 +2,7 @@ import { ChevronDown, Menu, Search, X } from 'lucide-react'
 import { useEffect, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { footerPhones } from '../data/content'
-import {
-  INDIA_FLAG,
-  LOGO,
-  MENU_IMAGE,
-  aboutLinks,
-  downloadLinks,
-  productGroups,
-  regions,
-  topCategories,
-} from '../data/navigation'
+import { LOGO, MENU_IMAGE, aboutLinks, downloadLinks, productGroups, topCategories } from '../data/navigation'
 import { SearchModal } from './SearchModal'
 
 function itemClass(active: boolean) {
@@ -23,7 +14,6 @@ export function Header() {
   const [productsOpen, setProductsOpen] = useState(false)
   const [aboutOpen, setAboutOpen] = useState(false)
   const [downloadOpen, setDownloadOpen] = useState(false)
-  const [regionOpen, setRegionOpen] = useState(false)
   const [groupIndex, setGroupIndex] = useState(0)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [mobileGroup, setMobileGroup] = useState<string | null>(null)
@@ -53,7 +43,6 @@ export function Header() {
     setDownloadOpen(false)
     setMobileOpen(false)
     setSearchOpen(false)
-    setRegionOpen(false)
   }, [location.pathname, location.search])
 
   useEffect(() => {
@@ -73,7 +62,7 @@ export function Header() {
   const path = location.pathname
   const productsActive = path.startsWith('/pro-series') || path.startsWith('/products') || path.startsWith('/product-details')
   const aboutActive = path.startsWith('/about')
-  const downloadActive = ['/datasheet', '/catalog', '/software'].some((item) => path.startsWith(item))
+  const downloadActive = ['/datasheet', '/catalog'].some((item) => path.startsWith(item))
   const contactActive = path.startsWith('/contact')
   const homeActive = path === '/'
 
@@ -97,28 +86,6 @@ export function Header() {
                 <button type="button" className="inline-flex items-center" aria-label="Search" onClick={() => setSearchOpen(true)}>
                   <Search size={15} />
                 </button>
-                <div
-                  className="relative"
-                  onMouseEnter={() => setRegionOpen(true)}
-                  onMouseLeave={() => setRegionOpen(false)}
-                >
-                  <button type="button" className="inline-flex items-center gap-1" aria-label="Selec regions">
-                    <img src={INDIA_FLAG} alt="" className="h-[18px] w-6 object-cover" />
-                    <ChevronDown size={12} />
-                  </button>
-                  {regionOpen && (
-                    <ul className="absolute right-0 z-50 w-48 border border-[#eee] bg-white py-1 shadow-md">
-                      {regions.map((region) => (
-                        <li key={region.label}>
-                          <a href={region.href} className="flex items-center gap-2 px-3 py-2 text-[13px] hover:bg-[#fafafa] hover:text-brand">
-                            <img src={region.flag} alt="" className="h-[18px] w-6 object-cover" />
-                            {region.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </div>
               </div>
             )}
 
@@ -168,9 +135,6 @@ export function Header() {
                   </ul>
                 )}
               </div>
-              <a href="https://hr-1.in/b5e4db" className={itemClass(false)} target="_blank" rel="noreferrer">
-                Careers
-              </a>
               <NavLink to="/contact" className={itemClass(contactActive)}>
                 Contact Us
               </NavLink>
@@ -292,9 +256,6 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <a href="https://hr-1.in/b5e4db" className="block px-3 py-3 text-[14px] font-bold uppercase" target="_blank" rel="noreferrer">
-              Careers
-            </a>
             <Link to="/contact" className="block px-3 py-3 text-[14px] font-bold uppercase" onClick={() => setMobileOpen(false)}>
               Contact Us
             </Link>

@@ -44,17 +44,12 @@ export function ContactPage() {
       <div className="container-site grid gap-10 py-10 lg:grid-cols-[1.1fr_0.9fr]">
         <form
           className="border border-[#eee] p-5"
+          noValidate
           onSubmit={(event) => {
             event.preventDefault()
             const next = validate()
             setErrors(next)
-            if (Object.keys(next).length) {
-              setSubmitted(false)
-              return
-            }
-            const existing = JSON.parse(localStorage.getItem('selec-enquiries') || '[]') as unknown[]
-            localStorage.setItem('selec-enquiries', JSON.stringify([...existing, { ...form, at: new Date().toISOString() }]))
-            setSubmitted(true)
+            setSubmitted(Object.keys(next).length === 0)
           }}
         >
           <h2 className="mb-4 text-[18px] font-semibold text-ink">You can contact us if you have any query</h2>
@@ -105,7 +100,7 @@ export function ContactPage() {
           </button>
           {submitted && (
             <p className="mt-4 text-[13px] text-[#1b7a32]">
-              Enquiry saved in this browser. This recreation does not send the form to Selec.
+              Thank you for your enquiry.
             </p>
           )}
         </form>
